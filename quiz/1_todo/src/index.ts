@@ -1,4 +1,4 @@
-let todoItems;
+let todoItems : any;
 
 // api
 function fetchTodoItems() {
@@ -16,7 +16,7 @@ function fetchTodos() {
   return todos;
 }
 
-function addTodo(todo) {
+function addTodo(todo) : void  {
   todoItems.push(todo);
 }
 
@@ -30,10 +30,12 @@ function completeTodo(index, todo) {
 }
 
 // business logic
+// 할일 목록에서 첫번째 요소만 가져오기
 function logFirstTodo() {
   return todoItems[0];
 }
 
+// 할일 목록에서 완료된 것들만 가져오기
 function showCompleted() {
   return todoItems.filter(item => item.done);
 }
